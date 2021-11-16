@@ -5,6 +5,12 @@
     font-size: 1rem;
 }
 
+/* UTILITIES */
+.mg-right {
+    margin-right: 40%;
+}
+/* FINE UTILITIES */
+
 #background_container {
     height: 100vh;
     background-color: lightcoral;
@@ -40,23 +46,104 @@
 .top {
     height: 12%;
     background-color: blanchedalmond;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    
 }
 
 .notifications {
     height: 14%;
     background-color: lightgreen;
+
+    display: flex;
+}
+
+.notifications_left,
+.notifications_right {
+    height: 100%;
+    padding: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.circle {
+    height: 100%;
+    width: 200%;
+    border-radius: 50%;
+    background-color: rgb(216, 199, 199);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background_search {
      height: 10%;
      background-color: lightsteelblue;
-     padding: 1rem;
+     padding: 2%;
+     padding-left: 5%;
+     padding-right: 5%;
+}
+
+.search_button {
+   height: 90%;
+   width: 15%;
+   float: left;
+}
+
+.input_search {
+    height: 90%;
+    width: 85%;
+    float: left;
 }
 
 .person {
     height: 15%;
     background-color: mediumseagreen;
     border: 0.5px solid black;
+    display: flex;
+    padding: 5%;
+}
+
+.user_photo,
+.user_name {
+   height: 100%;
+   width: 100%;
+}
+
+.photo {
+    height: 100%;
+    width: 40%;
+    background-image: url(../img/avatar_1.jpg);
+    background-size: contain;
+    
+    border-radius: 50%;
+    
+}
+    
+.foto_profilo {
+    height: 100%;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.foto_profilo img {
+   height: 100%;
+   width: 100%;
+   border-radius: 50%;
+}
+
+.left_inside {
+    display: flex;
+    align-items: center;
+}
+
+.right_inside {
+    display: flex;
+    justify-content: center;
 }
 /* END LEFT */
 
