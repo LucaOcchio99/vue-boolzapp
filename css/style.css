@@ -9,6 +9,12 @@
 .mg-right {
     margin-right: 40%;
 }
+
+.mg-left {
+    margin-left: 15px;
+}
+
+
 /* FINE UTILITIES */
 
 #background_container {
@@ -44,7 +50,7 @@
 
 /* START LEFT */
 .top {
-    height: 12%;
+    height: 81px;
     background-color: blanchedalmond;
     padding: 5%;
     display: flex;
@@ -112,18 +118,24 @@
 .user_name {
    height: 100%;
    width: 100%;
+   display: flex;
+   align-items: center;
 }
 
 .photo {
     height: 100%;
     width: 40%;
-    background-image: url(../img/avatar_1.jpg);
     background-size: contain;
-    
-    border-radius: 50%;
-    
+    border-radius: 50%;    
 }
     
+.photo img {
+    height: 100%;
+    width: 100%;
+    
+    border-radius: 50%;
+}
+
 .foto_profilo {
     height: 100%;
     width: 20%;
@@ -160,6 +172,8 @@
 .write_message {
     height: 12%;
     background-color: brown;
+
+    display: flex;
 }
 
 .message_sent,
@@ -168,11 +182,83 @@
     background-color: burlywood;
     border: 0.2px solid black;
     padding: 1rem;
-    text-align: center;
 }
 
 .message_sent {
     align-self: flex-end;
+}
+
+.message_received p:last-child,
+.message_sent p:last-child {
+    font-size: 12px;
+    text-align: end;
+}
+
+.top_left {
+    height: 50px;
+    
+    background: brown;
+}
+
+.top_left img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.top_center {
+    height: 50px;
+    width: 50%;
+    background-color: aliceblue; 
+    flex-grow: 1;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.top_right {
+    height: 50px;
+    background: chartreuse;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.write_message_left {
+    height: 100%;
+    width: 8%;
+    background-color: aquamarine;
+    padding: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.write_message_center {
+    height: 100%;
+    flex-grow: 1;
+    background-color: rgb(133, 102, 102);
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.write_message_right {
+    height: 100%;
+    width: 8%;
+    background-color: lightgreen;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_write {
+    height: 70%;
+    width: 100%;
 }
 /* END RIGHT */
 
