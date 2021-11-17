@@ -85,8 +85,14 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
-         
+        ],
+       
+        activeContact : 0,   
+    },
+    methods: {
+       setContact(contactIndex) {
+           console.log(contactIndex)
+       }
     }
 
 });

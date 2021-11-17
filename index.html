@@ -47,7 +47,10 @@
                     <input class="input_search" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                
-                <div class="person" v-for="contact in contacts">
+                <div class="person" 
+                v-for="(contact,index) in contacts"
+                :class="{active: index === activeContact}"
+                @click="setContact(index)">
                     <div class="user_photo">
                        <div class="photo">
                            <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
@@ -115,9 +118,9 @@
                 
                 
                 <div class="background_chat">
-                    <div class="message_sent" v-for="message in messages">
-                        <p>{{message.text}}</p>
-                        <p>{{message.date}}</p>
+                    <div class="message_sent">
+                        <p>Messaggio inviato</p>
+                        <p>10/01/2021 15:50:00</p>
                     </div>
                     <div class="message_received">
                         <p>Messaggio ricevuto</p>
