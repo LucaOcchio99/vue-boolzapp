@@ -186,12 +186,16 @@
     width: 35%;
     border: 0.2px solid white;
     padding: 8px;
-    background: whitesmoke;
     border-radius: 15px;
 }
 
 .message_sent {
     align-self: flex-end;
+    background-color: lightgreen;
+}
+
+.message_received {
+    background-color: whitesmoke;
 }
 
 .message_received p:last-child,

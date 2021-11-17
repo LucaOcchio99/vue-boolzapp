@@ -7,9 +7,11 @@
     <title>Boolazapp</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    
+
+<div id="root">
     <!-- INIZIO PARTE SINISTRA -->
     <div id="background_container">
          <div id="container">
@@ -45,18 +47,18 @@
                     <input class="input_search" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                
-                <div class="person">
+                <div class="person" v-for="contact in contacts">
                     <div class="user_photo">
                        <div class="photo">
-                           <img src="./img/avatar_1.jpg" alt="">
+                           <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                        </div> 
                     </div>
                     <div class="user_name">
-                      <h4>Michele</h4>
+                      <h4>{{contact.name}}</h4>
                     </div>
                 </div>
                 
-                <div class="person">
+                <!-- <div class="person">
                     <div class="user_photo">
                         <div class="photo">
                             <img src="./img/avatar_2.jpg" alt="">
@@ -87,7 +89,7 @@
                      <div class="user_name">
                        <h4>Luisa</h4>
                      </div>
-                </div>
+                </div> -->
              </div>
             <!-- FINE PARTE SINISTRA -->
            
@@ -113,12 +115,12 @@
                 
                 
                 <div class="background_chat">
-                    <div class="message_sent">
-                        <p>Messaggio inviato</p>
-                        <p>10/01/2021 15:50:00</p>
+                    <div class="message_sent" v-for="message in messages">
+                        <p>{{message.text}}</p>
+                        <p>{{message.date}}</p>
                     </div>
                     <div class="message_received">
-                        <p>Messaggio inviato</p>
+                        <p>Messaggio ricevuto</p>
                         <p>10/01/2021 15:50:00</p>
                     </div>
                 </div>
@@ -140,5 +142,7 @@
          </div>
     </div>
     <!-- FINE PARTE DESTRA -->
+</div>
+    <script src="./main/main.js"></script>
 </body>
 </html>
