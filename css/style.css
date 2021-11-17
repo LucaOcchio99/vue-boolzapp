@@ -118,6 +118,11 @@
     display: flex;
     padding: 5%;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.person:hover {
+   background-color: rgba(221, 200, 200, 0.726);
 }
 
 .user_photo,
@@ -169,7 +174,7 @@
 .background_chat {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
-
+    overflow: auto;
     display: flex;
     flex-direction: column;
 

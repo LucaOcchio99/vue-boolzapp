@@ -119,13 +119,13 @@
                 
                 <div class="background_chat"
                 v-for="message in contacts[activeContact].messages">
-                    <div class="message_sent">
+                    <div class="message_sent" v-if="message.status === 'sent'">
                         <p>{{ message.text }}</p>
-                        <p>10/01/2021 15:50:00</p>
+                        <p>{{ message.date }}</p>
                     </div>
-                    <div class="message_received">
+                    <div class="message_received" v-else>
                         <p>{{ message.text }}</p>
-                        <p>10/01/2021 15:50:00</p>
+                        <p>{{ message.date }}</p>
                     </div>
                 </div>
               
