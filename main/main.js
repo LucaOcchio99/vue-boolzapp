@@ -89,6 +89,7 @@ const app = new Vue({
         
         activeContact : 0,
         newMessage : '',  
+        writeContact : '',
     },
     methods: {
        setContact(contactIndex) {       
@@ -115,7 +116,7 @@ const app = new Vue({
                     status: 'recived'
             });
           }, 1000);
+        }
       }
-    },
-  }
+    }, 
 });

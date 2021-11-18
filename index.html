@@ -43,8 +43,16 @@
                 </div>
 
                 <div class="background_search">
-                    <button class="search_button"><i class="fas fa-search"></i></button>
-                    <input class="input_search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <button 
+                    class="search_button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                   
+                    <input 
+                      class="input_search" 
+                      type="text" 
+                      placeholder="Cerca o inizia una nuova chat"
+                     >
                 </div>
                
                 <div class="person" 
@@ -116,7 +124,7 @@
                     </div>
                 </div>
                 
-                
+            <div class="overflow">
                 <div class="background_chat"
                 v-for="message in contacts[activeContact].messages">
                     <div class="message_sent" v-if="message.status === 'sent'">
@@ -128,7 +136,7 @@
                         <p>{{ message.date }}</p>
                     </div>
                 </div>
-              
+            </div>
                 <div class="write_message">
                     <div class="write_message_left">
                         <i class="far fa-smile"></i>
