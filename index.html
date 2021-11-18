@@ -21,7 +21,7 @@
                     <div class="foto_profilo">
                         <img src="./img/avatar_io.jpg" alt="">
                     </div> 
-                    <span>Nome Utente</span>
+                    <span>Luca Occhionorelli</span>
                     </div>
                 <div class="right_inside">
                     <i class="fas fa-circle-notch mg-right"></i>
@@ -101,11 +101,11 @@
                 
                 <div class="top">                        
                     <div class="top_left">
-                       <img src="./img/avatar_8.jpg" alt="">
+                       <img :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
                     </div>
                     
                     <div class="top_center">
-                        <h4 class="mg-left">Michele</h4>
+                        <h4 class="mg-left">{{ contacts[activeContact].name}}</h4>
                         <p class="mg-left">Ultimo accesso oggi alle 10.35</p>
                     </div>
                     
@@ -135,12 +135,21 @@
                     </div>
                    
                     <div class="write_message_center">
-                        <input type="text" placeholder="Scrivi un messaggio" class="input_write" >
+                        <input 
+                        type="text" 
+                        placeholder="Scrivi un messaggio" 
+                        class="input_write"
+                        v-model.trim="newMessage"
+                        @keyup.enter = "addNewMessage">
                     </div>
                    
                     <div class="write_message_right">
-                        <i class="fas fa-microphone "></i>
+                        <button
+                        @click="addNewMessage"> 
+                            <i class="fas fa-microphone "></i>
+                        </button>
                     </div>
+               
                 </div>
              </div>
          </div>

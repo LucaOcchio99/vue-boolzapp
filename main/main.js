@@ -86,14 +86,36 @@ const app = new Vue({
                 ],
             },
         ],
-       
-        activeContact : 0,   
+        
+        activeContact : 0,
+        newMessage : '',  
     },
     methods: {
        setContact(contactIndex) {       
            this.activeContact = contactIndex;
            console.log(this.activeContact);
-       }
-    }
+       },
 
+       addNewMessage() {
+          if(this.newMessage !== '') {
+
+            this.contacts[this.activeContact].messages.push({
+                date: '10/01/2020 15:50:00',
+                        text: this.newMessage,
+                        status: 'sent'
+            });
+
+            this.newMessage = '';
+
+            //rispsta automatica
+            setTimeout(() => {
+                this.contacts[this.activeContact].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    text: 'ok',
+                    status: 'recived'
+            });
+          }, 1000);
+      }
+    },
+  }
 });
