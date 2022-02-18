@@ -4,166 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolazapp</title>
+    <title>Boolzapp</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-</head>
-<body>
+    <script src="https://kit.fontawesome.com/ab74f48bc3.js" crossorigin="anonymous"></script>    <body>
 
-<div id="root">
-    <!-- INIZIO PARTE SINISTRA -->
-    <div id="background_container">
-         <div id="container">
-             <div id="left">
-                <div class="top">
-                 <div class="left_inside">  
-                    <div class="foto_profilo">
-                        <img src="./img/avatar_io.jpg" alt="">
-                    </div> 
-                    <span>Luca Occhionorelli</span>
-                    </div>
-                <div class="right_inside">
-                    <i class="fas fa-circle-notch mg-right"></i>
-                    <i class="fas fa-comment-alt mg-right"></i>
-                    <i class="fas fa-ellipsis-v mg-right"></i>
-                </div>    
-                </div>
-
-                <div class="notifications">
-                       <div class="notifications_left">
-                           <div class="circle">
-                            <i class="fas fa-bell-slash"></i>
-                           </div>
-                       </div>
-                       <div class="notifications_right">
-                           <h3>Ricevi notifiche di nuovi messaggi</h3>
-                           <a href="">Attiva notifiche desktop</a>
-                       </div>
-                </div>
-
-                <div class="background_search">
-                    <button 
-                    class="search_button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                   
-                    <input 
-                      class="input_search" 
-                      type="text" 
-                      placeholder="Cerca o inizia una nuova chat"
-                     >
-                </div>
-               
-                <div class="person" 
-                v-for="(contact,index) in contacts"
-                :class="{active: index === activeContact}"
-                @click="setContact(index)">
-                    <div class="user_photo">
-                       <div class="photo">
-                           <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
-                       </div> 
-                    </div>
-                    <div class="user_name">
-                      <h4>{{contact.name}}</h4>
-                    </div>
-                </div>
-                
-                <!-- <div class="person">
-                    <div class="user_photo">
-                        <div class="photo">
-                            <img src="./img/avatar_2.jpg" alt="">
-                        </div> 
-                     </div>
-                     <div class="user_name">
-                       <h4>Fabio</h4>
-                     </div>
-                </div>
-                
-                <div class="person">
-                    <div class="user_photo">
-                        <div class="photo">
-                            <img src="./img/avatar_3.jpg" alt="">
-                        </div> 
-                     </div>
-                     <div class="user_name">
-                       <h4>Samuele</h4>
-                     </div>
-                </div>
-                
-                <div class="person">
-                    <div class="user_photo">
-                        <div class="photo">
-                            <img src="./img/avatar_4.jpg" alt="">
-                        </div> 
-                     </div>
-                     <div class="user_name">
-                       <h4>Luisa</h4>
-                     </div>
-                </div> -->
-             </div>
-            <!-- FINE PARTE SINISTRA -->
-           
-            <!-- INIZIO PARTE DESTRA  -->
-            <div id="right">
-                
-                <div class="top">                        
-                    <div class="top_left">
-                       <img :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
-                    </div>
-                    
-                    <div class="top_center">
-                        <h4 class="mg-left">{{ contacts[activeContact].name}}</h4>
-                        <p class="mg-left">Ultimo accesso oggi alle 10.35</p>
-                    </div>
-                    
-                    <div class="top_right">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip mg-left"></i>
-                        <i class="fas fa-ellipsis-v mg-left"></i>
-                    </div>
-                </div>
-                
-            <div class="overflow">
-                <div class="background_chat"
-                v-for="message in contacts[activeContact].messages">
-                    <div class="message_sent" v-if="message.status === 'sent'">
-                        <p>{{ message.text }}</p>
-                        <p>{{ message.date }}</p>
-                    </div>
-                    <div class="message_received" v-else>
-                        <p>{{ message.text }}</p>
-                        <p>{{ message.date }}</p>
-                    </div>
-                </div>
-            </div>
-                <div class="write_message">
-                    <div class="write_message_left">
-                        <i class="far fa-smile"></i>
-                    </div>
-                   
-                    <div class="write_message_center">
-                        <input 
-                        type="text" 
-                        placeholder="Scrivi un messaggio" 
-                        class="input_write"
-                        v-model.trim="newMessage"
-                        @keyup.enter = "addNewMessage">
-                    </div>
-                   
-                    <div class="write_message_right">
-                        <button
-                        @click="addNewMessage"> 
-                            <i class="fas fa-microphone "></i>
-                        </button>
-                    </div>
-               
-                </div>
-             </div>
-         </div>
+    <div class="container">
+        <!-- parte sinistra chat -->
+       <aside>
+         <section class="header">
+        <div class="header_left">
+           <img src="./img/avatar_io.jpg" alt="immagine profilo">
+           <span class="pd_left">Nome Utente</span>
+        </div>
+        <div class="header_right">
+            <i class="fas fa-circle-notch mg-right"></i>
+            <i class="fas fa-comment-alt mg-right pd_left"></i>
+            <i class="fas fa-ellipsis-v mg-right pd_left"></i>      
+        </div>    
+        </section>
+       </aside>
+       <!-- fine parte sinistra chat --> 
     </div>
-    <!-- FINE PARTE DESTRA -->
-</div>
+    <!-- js -->
     <script src="./main/main.js"></script>
 </body>
 </html>
