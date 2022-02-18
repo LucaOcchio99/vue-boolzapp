@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -24,8 +25,14 @@ body {
 .pd_left {
     padding-left: 1rem;
 }
+
+.pd {
+    padding: 1rem;
+}
 /* FINE UTILITIES */
 
+/* INIZIO ASIDE */
+  /* SECTION HEADER */
 .container {
     height: 80vh;
     width: 80vw;
@@ -61,9 +68,35 @@ aside {
    display: flex;
    justify-content: center;
    align-items: center;
+   font-weight: 900;
 }
 
 .header_right .fas {
     font-size: 1.2rem;
+    color: grey;
 }
+  /* FINE SECTION ASIDE */
+  
+   /* INIZIO SECTION NOTIFICHE */
+.notifiche {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: lightblue;
+}
+
+.campanella {
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    font-size: 1.5rem;
+    color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+}    
+   /* FINE SECTION NOTIFICHE */
+/* FINE ASIDE */
 
