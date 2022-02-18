@@ -29,6 +29,9 @@ body {
 .pd {
     padding: 1rem;
 }
+.pd_05 {
+    padding: 0.5rem;
+}
 /* FINE UTILITIES */
 
 /* INIZIO ASIDE */
@@ -98,5 +101,43 @@ aside {
     border-radius: 50%;
 }    
    /* FINE SECTION NOTIFICHE */
+
+   /* INIZIO SECTION INPUT */
+   .text {
+       width: 89%;
+   }
+
+   button {
+       width: 10%;
+   }
+   /* FINE SECTION INPUT */
+
+    /* INIZIO SECTION CHAT */
+    .chat_personale {
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        border-bottom: 1px solid black;
+    }
+
+    .chat_personale img {
+         height: 55px;
+         border-radius: 50%; 
+       }
+    /* FINE SECTION CHAT */
+
 /* FINE ASIDE */
+
+/* INIZIO MAIN */
+main {
+    height: 100%;
+    width: 60%;
+    border: 1px solid black;
+
+    background-color: #dfe0d9;
+}
+/* FINE MAIN */
+
 
