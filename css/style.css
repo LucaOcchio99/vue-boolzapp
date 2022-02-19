@@ -153,6 +153,25 @@ main {
     left: 645px;
     width: 48%;
 }
+
+footer {
+    position: fixed;
+    bottom: 74px;
+    left: 645px;
+    width: 48%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.2rem;
+    color: grey;
+    border: 1px solid black;
+}
+
+.messaggi {
+    
+}
 /* FINE MAIN */
 
 
