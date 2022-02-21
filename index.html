@@ -10,8 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
     <body>
 
+<div id="root">
     <div class="container">
         <!-- parte sinistra chat -->
        <aside>
@@ -45,13 +48,13 @@
         </section>
 
         <section class="chat"> 
-            <div class="chat_personale">
-                <img src="./img/avatar_1.jpg" alt="">
-                <span class="pd_left">Michele</span>
+            <div class="chat_personale" v-for="contact in contacts">
+                <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                <span class="pd_left">{{ contact.name }}</span>
                 </div>
             </aside>
             
-            
+            <!-- inizio parte destra chat  -->
             <main>
                 <section class="header header_main">
                     <div class="header_left">
@@ -68,21 +71,28 @@
                     </div>    
                     </section>
 
-                    <div class="messaggi">
-                        
+                    <div class="messaggi pd">
+                        <div class="messaggio_ricevuto pd_05">
+                            <p>messaggio ricevuto</p>
+                            <p>10/01/2021 15:50:00</p>
+                        </div>
+                        <div class="messaggio_inviato pd_05">
+                            <p>messaggio inviato</p>
+                            <p>10/01/2021 15:50:00</p>
+                        </div>
                     </div>
 
                     <footer class="pd">
                         <i class="far fa-smile"></i>
                         <input type="text" class="text pd_05" placeholder="Scrivi un messaggio">
-                        <i class="fas fa-microphone "></i>
+                        <p></p>
+                        <i class="fas fa-microphone"></i>
                     </footer>
             </main>
+            <!-- fine parte destra chat -->
             </div>
        <!-- fine parte sinistra chat --> 
-       
-       <!-- inizio parte destra chat  -->
-       <!-- fine parte destra chat -->
+    </div> 
    
     <!-- js -->
     <script src="./main/main.js"></script>

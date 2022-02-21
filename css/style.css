@@ -170,7 +170,41 @@ footer {
 }
 
 .messaggi {
+    height: calc(100% - 74px - 74px);
+    width: 100%;
+    margin-top: 82px;
+    background-color:lightblue;
+    overflow-y: auto;
+    background-image: url(../img/mine.jpg);
     
+    display: flex;
+    justify-content: space-between;
+}
+
+.messaggio_inviato,
+.messaggio_ricevuto {
+    background-color: white;
+    width: 300px;
+    border-radius: 50px;
+    height: 50px;
+    
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.messaggio_inviato {
+    background-color: lightgreen;
+}
+
+.messaggio_ricevuto {
+   margin-top: 55px;
+}
+
+.messaggio_inviato p:last-child,
+.messaggio_ricevuto p:last-child {
+    font-size: 10px;
+    color: gray;
+    text-align: right;
 }
 /* FINE MAIN */
 
