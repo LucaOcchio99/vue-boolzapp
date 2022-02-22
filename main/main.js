@@ -90,6 +90,6 @@ const app = new Vue({
                 ],
             },
         ],  
-        activeChat: 1,
+        activeChat: 0,
     }, 
 });

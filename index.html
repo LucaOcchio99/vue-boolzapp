@@ -48,7 +48,10 @@
         </section>
 
         <section class="chat"> 
-            <div class="chat_personale" v-for="contact in contacts">
+            <div 
+            class="chat_personale" 
+            v-for="(contact, index) in contacts"
+            :class="{active: index === activeChat}">
                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                 <span class="pd_left">{{ contact.name }}</span>
                 </div>
@@ -70,9 +73,7 @@
                     </div>    
                     </section>
 
-                    <div class="messaggi pd"
-                     v-for="contact in contacts"
-                    >
+                    <div class="messaggi pd">
                            <!-- {{contacts[activeChat]}} -->
                         <div class="pd_05"
                          v-for="message in contacts[activeChat].messages"
