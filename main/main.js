@@ -92,4 +92,13 @@ const app = new Vue({
         ],  
         activeChat: 0,
     }, 
+
+    /**
+     *  set chat slide by chat click
+     */
+    methods: {
+        setChat(chatIndex) {
+            this.activeChat = chatIndex;
+          }
+    }
 });

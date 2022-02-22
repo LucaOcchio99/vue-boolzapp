@@ -51,7 +51,8 @@
             <div 
             class="chat_personale" 
             v-for="(contact, index) in contacts"
-            :class="{active: index === activeChat}">
+            @click="setChat(index)"
+            >
                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                 <span class="pd_left">{{ contact.name }}</span>
                 </div>

@@ -123,6 +123,11 @@ aside {
         align-items: center;
         background-color: white;
         border-bottom: 1px solid black;
+        cursor: pointer;
+    }
+
+    .chat_personale:hover {
+        background-color: lightblue;
     }
 
     .chat_personale img {
@@ -211,10 +216,6 @@ footer {
     padding: 0.5rem;
 }
 
-.active:hover {
-    background-color: lightblue;
-    cursor: pointer;
-}
 /* FINE MAIN */
 
 
