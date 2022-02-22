@@ -91,9 +91,16 @@
 
                     <footer class="pd">
                         <i class="far fa-smile"></i>
-                        <input type="text" class="text pd_05" placeholder="Scrivi un messaggio">
-                        <p></p>
-                        <i class="fas fa-microphone"></i>
+                        <input 
+                         type="text" 
+                         class="text pd_05" 
+                         placeholder="Scrivi un messaggio"
+                         v-model="message"
+                         >
+                        <i 
+                        class="fas fa-microphone"
+                        @click="setSend"
+                        ></i>
                     </footer>
             </main>
             <!-- fine parte destra chat -->
@@ -102,6 +109,7 @@
     </div> 
    
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
     <script src="./main/main.js"></script>
 </body>
 </html>

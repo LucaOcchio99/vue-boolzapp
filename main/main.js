@@ -90,6 +90,7 @@ const app = new Vue({
                 ],
             },
         ],  
+        message: "",
         activeChat: 0,
     }, 
 
@@ -99,6 +100,27 @@ const app = new Vue({
     methods: {
         setChat(chatIndex) {
             this.activeChat = chatIndex;
+          },
+          setSend(){
+             if(this.message !== "") {
+                 this.contacts[this.activeChat].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:MM:ss'),
+                        text: this.message,
+                        status: 'sent'
+                    }
+                 );
+             }
+             this.message = "";
+            
+             setTimeout(() => {
+                this.contacts[this.activeChat].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:MM:ss'),
+                        text: 'ok',
+                        status: 'received'
+                    });
+          }, 1000);
           }
     }
 });
