@@ -1,6 +1,10 @@
 const app = new Vue({
     el : '#root',
     data : {
+        user : {
+            name : 'Anna Ipsum',
+            avatar: '_io',
+        },
       contacts: [
             {
                 name: 'Michele',
@@ -45,7 +49,8 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
-            },    {
+            },    
+            {
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -85,5 +90,6 @@ const app = new Vue({
                 ],
             },
         ],  
+        activeChat: 1,
     }, 
 });

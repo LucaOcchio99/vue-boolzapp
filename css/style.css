@@ -142,7 +142,8 @@ main {
     background-color: #dfe0d9;
 }
 
-.personal_chat p:last-child {
+.personal_chat p:last-child,
+.orario {
     font-size:13px;
     color: gray;
 }
@@ -176,28 +177,25 @@ footer {
     background-color:lightblue;
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
-    
-    display: flex;
-    justify-content: space-between;
 }
 
 .messaggio_inviato,
 .messaggio_ricevuto {
     background-color: white;
     width: 300px;
-    border-radius: 50px;
-    height: 50px;
-    
+    border-radius: 1rem;
+    padding: 0.5rem;
     margin-bottom: 0.5rem;
-    display: inline-block;
 }
 
 .messaggio_inviato {
-    background-color: lightgreen;
+    background-color: lightgreen;  
 }
 
-.messaggio_ricevuto {
-   margin-top: 55px;
+.sent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .messaggio_inviato p:last-child,
@@ -205,6 +203,12 @@ footer {
     font-size: 10px;
     color: gray;
     text-align: right;
+}
+
+.orario {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
 }
 /* FINE MAIN */
 

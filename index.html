@@ -20,8 +20,8 @@
        <aside>
          <section class="header">
         <div class="header_left">
-           <img src="./img/avatar_io.jpg" alt="immagine profilo">
-           <p class="pd_left font_weight">Nome Utente</p>
+           <img :src="`./img/avatar${user.avatar}.jpg`" alt="immagine profilo">
+           <p class="pd_left font_weight">{{user.name}}</p>
         </div>
         <div class="header_right">
             <i class="fas fa-circle-notch mg-right"></i>
@@ -53,7 +53,6 @@
                 <span class="pd_left">{{ contact.name }}</span>
                 </div>
             </aside>
-            
             <!-- inizio parte destra chat  -->
             <main>
                 <section class="header header_main">
@@ -71,15 +70,21 @@
                     </div>    
                     </section>
 
-                    <div class="messaggi pd">
-                        <div class="messaggio_ricevuto pd_05">
-                            <p>messaggio ricevuto</p>
-                            <p>10/01/2021 15:50:00</p>
-                        </div>
-                        <div class="messaggio_inviato pd_05">
-                            <p>messaggio inviato</p>
-                            <p>10/01/2021 15:50:00</p>
-                        </div>
+                    <div class="messaggi pd"
+                     v-for="contact in contacts"
+                    >
+                           <!-- {{contacts[activeChat]}} -->
+                        <div class="pd_05"
+                         v-for="message in contacts[activeChat].messages"
+                        >
+                       <div class="recived">
+                         <p v-if="message.status === 'received'" class="messaggio_ricevuto">{{message.text}} <br> <span class="orario">{{message.date}}</span> </p>
+                       </div>
+                       <div class="sent">
+                        <p v-if="message.status === 'sent'" class="messaggio_inviato">{{message.text}} <br> <span class="orario">{{message.date}}</span></p>
+                      </div>   
+                    </div>
+
                     </div>
 
                     <footer class="pd">
@@ -91,7 +96,7 @@
             </main>
             <!-- fine parte destra chat -->
             </div>
-       <!-- fine parte sinistra chat --> 
+
     </div> 
    
     <!-- js -->
