@@ -44,14 +44,22 @@
             <button> 
                 <i class="fas fa-search pd_05"></i>
             </button>
-            <input type="text" class="text pd_05" placeholder="Cerca o inizia una nuova chat">
+            <input 
+            type="text" 
+            class="text pd_05" 
+            placeholder="Cerca o inizia una nuova chat"
+            v-model.trim="searchInput"
+            @keyup="filterChats"
+            >
         </section>
 
         <section class="chat"> 
             <div 
             class="chat_personale" 
             v-for="(contact, index) in contacts"
+            :class="{active: index === activeChat}"
             @click="setChat(index)"
+            
             >
                 <img :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                 <span class="pd_left">{{ contact.name }}</span>
@@ -76,7 +84,7 @@
 
                     <div class="messaggi pd">
                            <!-- {{contacts[activeChat]}} -->
-                        <div class="pd_05"
+                        <div class="pd_05" 
                          v-for="message in contacts[activeChat].messages"
                         >
                        <div class="recived">
@@ -95,12 +103,15 @@
                          type="text" 
                          class="text pd_05" 
                          placeholder="Scrivi un messaggio"
-                         v-model="message"
+                         v-model.trim="message"
+                         @keyup.enter="setSend"
                          >
-                        <i 
-                        class="fas fa-microphone"
-                        @click="setSend"
-                        ></i>
+                      
+                            <i 
+                            class="fas fa-microphone"
+                            @click="setSend"
+                            ></i>
+                        
                     </footer>
             </main>
             <!-- fine parte destra chat -->

@@ -92,11 +92,10 @@ const app = new Vue({
         ],  
         message: "",
         activeChat: 0,
+        searchInput: '',
     }, 
 
-    /**
-     *  set chat slide by chat click
-     */
+   
     methods: {
         setChat(chatIndex) {
             this.activeChat = chatIndex;
@@ -121,6 +120,12 @@ const app = new Vue({
                         status: 'received'
                     });
           }, 1000);
-          }
-    }
+        },
+        filterChats() {
+            console.log('ciao');
+            this.contacts.forEach(contact => contact.name.toLowerCase().includes(this.searchInput.toLowerCase()) ? contact.visible = true : contact.visible = false);
+        }
+    },
 });
+
+
